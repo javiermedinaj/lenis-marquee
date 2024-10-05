@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply w-full h-full  overflow-x-hidden;
+  }
+}
+
+@layer components {
+  #marquee-1 .marquee,
+  #marquee-3 .marquee {
+    @apply left-[-15%];
+  }
+}
+
+@media (max-width: 900px) {
+  .marquees {
+    @apply h-screen;
+  }
+
+  .marquee-container {
+    @apply w-[250%] h-[150px];
+  }
+
+  #marquee-2 .marquee,
+  #marquee-4 .marquee {
+    @apply left-[-35%];
+  }
+
+  .item.with-text {
+    @apply flex-1;
+  }
+
+  .item h1 {
+    @apply text-[60px];
+  }
+}
+
+@media (max-width: 900px) {
+  .marquees {
+    @apply h-screen;
+  }
+  .marquee-container {
+    @apply w-[250%] h-[150px];
+  }
+  #marquee-2 .marquee,
+  #marquee-4 .marquee {
+    @apply left-[-35%];
+  }
+  .item.with-text {
+    @apply flex-1;
+  }
+  .item h1 {
+    @apply text-[60px];
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .marquees {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
